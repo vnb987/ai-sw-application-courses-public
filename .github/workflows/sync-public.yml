@@ -1,0 +1,30 @@
+name: Sync main to public mirror
+
+# Mirrors ONLY the `main` branch to the public repo vnb987/ai-sw-application-courses-public
+# on every push to `main`. The `solution` branch (and any other branch) is never touched or
+# pushed by this workflow, so answer keys never reach the public mirror.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Push main to public mirror
+        env:
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          if [ -z "${PUBLIC_REPO_TOKEN}" ]; then
+            echo "::error::PUBLIC_REPO_TOKEN secret is not set. Add it under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          git push "https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/vnb987/ai-sw-application-courses-public.git" HEAD:main
