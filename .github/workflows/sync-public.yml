@@ -27,4 +27,9 @@ jobs:
             echo "::error::PUBLIC_REPO_TOKEN secret is not set. Add it under Settings > Secrets and variables > Actions."
             exit 1
           fi
+          # actions/checkout injects an auth header scoped to all of https://github.com/,
+          # which silently overrides the token embedded in the URL below (causing the push
+          # to authenticate as github-actions[bot] instead of PUBLIC_REPO_TOKEN). Clear it
+          # for this step so our token is actually used.
+          git config --local --unset-all http.https://github.com/.extraheader || true
           git push "https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/vnb987/ai-sw-application-courses-public.git" HEAD:main
