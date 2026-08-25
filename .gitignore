@@ -1,0 +1,8 @@
+# Local Jupyter/notebook run artifacts
+.ipynb_checkpoints/
+*/data/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
