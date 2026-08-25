@@ -32,4 +32,13 @@ jobs:
           # to authenticate as github-actions[bot] instead of PUBLIC_REPO_TOKEN). Clear it
           # for this step so our token is actually used.
           git config --local --unset-all http.https://github.com/.extraheader || true
-          git push "https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/vnb987/ai-sw-application-courses-public.git" HEAD:main
+
+          # .github/workflows is private-repo automation plumbing, not course content -- strip
+          # it before mirroring (a PAT without the `workflow` scope/permission can't push it
+          # anyway, and there's no reason for the public mirror to carry this file).
+          rm -rf .github
+          git add -A
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -m "Sync from main @ ${GITHUB_SHA}" --allow-empty
+
+          git push --force "https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/vnb987/ai-sw-application-courses-public.git" HEAD:main
