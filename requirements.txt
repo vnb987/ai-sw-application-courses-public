@@ -1,7 +1,7 @@
 # Only needed for running notebooks locally instead of on Google Colab.
 # Colab already has numpy/pandas/matplotlib/scikit-learn/torch/torchvision/networkx
-# preinstalled; each notebook that needs an extra package (gensim, anthropic,
-# gymnasium) installs it itself via a `!pip install` cell.
+# preinstalled; each notebook that needs an extra package (gensim, transformers,
+# accelerate, gymnasium) installs it itself via a `!pip install` cell.
 
 numpy
 pandas
@@ -11,6 +11,7 @@ torch
 torchvision
 networkx
 gensim
-anthropic
+transformers
+accelerate
 gymnasium
 jupyter

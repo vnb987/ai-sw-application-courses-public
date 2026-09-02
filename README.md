@@ -33,7 +33,7 @@ No local installation is required. If a student prefers to run notebooks locally
 | 11 | Graph neural networks (GNN) | [Community Detection with a GNN](week11-gnn-node-classification/): GCN on Zachary's Karate Club | torch, networkx |
 | 12 | NLP basics & word embeddings | [Word Embeddings & Semantic Similarity](week12-nlp-word-embeddings/) | gensim, scikit-learn |
 | 13 | Recurrent neural networks (RNN) | [Name Generator with a Character-Level LSTM](week13-rnn-name-generator/) | torch |
-| 14 | LLMs & agentic AI | [Build a Claude-Powered Chatbot & Tool-Using Agent](week14-llm-agentic-ai/) | anthropic |
+| 14 | LLMs & agentic AI | [Build a Local LLM Chatbot & Tool-Using Agent](week14-llm-agentic-ai/) | transformers |
 | 15 | Reinforcement learning basics | [Teaching an Agent to Escape a Frozen Lake](week15-reinforcement-learning/): tabular Q-learning | gymnasium |
 | 16 | **Final exam** (covers weeks 9–15) | [Exam info](week16-final-exam/) | — |
 
@@ -41,5 +41,5 @@ No local installation is required. If a student prefers to run notebooks locally
 
 - Every non-exam notebook builds a small, complete, runnable project rather than isolated code snippets — the goal is an "aha, I can actually build this" moment each week, not library-reference coverage.
 - Datasets are either scikit-learn/torchvision built-ins (no download needed beyond the library's own cache) or small datasets generated/embedded directly in the notebook, so nothing breaks due to a missing file or a dead link.
-- Week 14 requires each student to provide their own Anthropic API key (instructions are in that week's notebook). Consider a shared classroom key or a small per-student credit budget.
+- Week 14 needs no API key or account — it runs a small open-source model (`Qwen2.5-1.5B-Instruct`) locally in Colab, free of charge. A Colab GPU runtime makes it noticeably faster but isn't required.
 - Weeks 9–15 assume Colab's free GPU is *not* required — everything trains in well under a minute or two on CPU — but enabling a Colab GPU runtime (`Runtime > Change runtime type`) will make weeks 9–13 faster.
