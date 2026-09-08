@@ -36,7 +36,7 @@ across all six models.
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/week3-boosting-update/week03-supervised-learning-2/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week03-supervised-learning-2/project.ipynb)
 
 ## Try it yourself
 
