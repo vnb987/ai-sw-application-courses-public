@@ -25,14 +25,6 @@ activity and body metrics. Right before the capstone, a summary table +
 chart compares accuracy, training time, and inference time across all six
 models.
 
-## Setup: a free Kaggle account
-
-The Calorie Efficiency dataset lives on Kaggle. `kagglehub` will prompt you
-to log in the first time you run that cell — a free account at
-[kaggle.com](https://www.kaggle.com/) is enough. If the login prompt doesn't
-work in Colab, the notebook includes a commented-out fallback using a
-Kaggle API token (`kaggle.json`).
-
 ## Open in Colab
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/week3-boosting-update/week03-supervised-learning-2/project.ipynb)
