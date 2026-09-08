@@ -17,11 +17,13 @@ before you train it:
 - **XGBoost** — a heavily optimized, regularized gradient boosting library
 - **LightGBM** — a faster gradient boosting library using leaf-wise tree growth
 
-All six train on Kaggle's classic **[House Prices: Advanced Regression Techniques](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)**
-competition — predicting a house's `SalePrice` from 12 strong numeric
-features (full categorical encoding is deferred to Week 6's data
-representation topic) — so the final comparison is a fair, apples-to-apples
-one. All train/test splitting uses scikit-learn's `train_test_split`.
+All six train on Kaggle's **[Laptop Price](https://www.kaggle.com/datasets/muhammetvarl/laptop-price)**
+dataset — predicting a laptop's price (`Price_euros`) from 5 numeric specs
+pulled out of otherwise-textual columns with regex (screen size, RAM, weight,
+CPU speed, storage — full categorical encoding of things like `Company`/
+`TypeName` is deferred to Week 6's data representation topic) — so the final
+comparison is a fair, apples-to-apples one. All train/test splitting uses
+scikit-learn's `train_test_split`.
 
 Before the six-model comparison, a short section introduces automated
 hyperparameter search — **GridSearchCV**, **RandomizedSearchCV**, and
@@ -32,27 +34,23 @@ model's *tuned* version (via RandomizedSearchCV). Right before the capstone,
 a summary table + chart compares RMSE, training time, and inference time
 across all six models.
 
-## Setup: a free Kaggle account + accepting the competition rules
-
-Unlike a plain dataset, a **competition** download requires being logged
-into a (free) Kaggle account and clicking **"Join Competition"** once on the
-[competition page](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
-to accept its rules — `kagglehub` will prompt you to log in the first time
-you run that cell.
-
 ## Open in Colab
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/week3-boosting-update/week03-supervised-learning-2/project.ipynb)
 
 ## Try it yourself
 
-Log-transform `SalePrice` before training (and un-transform the predictions
-before scoring) — does RMSE improve? This is what the real competition's
-RMSLE metric rewards.
+Log-transform the price before training (and un-transform the predictions
+before scoring) — does RMSE improve? Prices are right-skewed (a handful of
+very expensive laptops), so this often helps.
 
-## Capstone: Predict Tomorrow's Stock Price with XGBoost
+## Capstone: Predict Tomorrow's Stock Return with XGBoost
 
 Fetch real historical price data with `yfinance` (open/high/low/close/
 adjusted-close/volume plus 5/20/60/120-day moving averages), and train an
-`XGBRegressor` to predict the next day's closing price — then plot
-predicted vs. actual and compute RMSE.
+`XGBRegressor` to predict the next day's **return** — `(next close - today's
+close) / today's close` — rather than the raw price. A "+1.5%" pattern holds
+regardless of whether the stock trades at ₩50,000 or ₩100,000, so predicting
+returns generalizes better from a small dataset than predicting price levels
+directly. Convert back to a price only at the end (`today's close × (1 +
+predicted return)`) for the actual-vs-predicted plot and RMSE.
