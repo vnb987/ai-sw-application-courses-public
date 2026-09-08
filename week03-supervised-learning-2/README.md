@@ -17,13 +17,20 @@ before you train it:
 - **XGBoost** — a heavily optimized, regularized gradient boosting library
 - **LightGBM** — a faster gradient boosting library using leaf-wise tree growth
 
-Decision Tree and Random Forest train on scikit-learn's built-in **Breast
-Cancer Wisconsin** dataset; the four boosting models switch to a real,
-imbalanced open dataset from Kaggle — **[Calorie Burn Efficiency](https://www.kaggle.com/datasets/parasharmanu/close-to-realistic-calorie-efficiency-dataset)**
+All six train on the same real, imbalanced open dataset from Kaggle —
+**[Calorie Burn Efficiency](https://www.kaggle.com/datasets/parasharmanu/close-to-realistic-calorie-efficiency-dataset)**
 — predicting a person's calorie-burn efficiency (Low/Moderate/High) from
-activity and body metrics. Right before the capstone, a summary table +
-chart compares accuracy, training time, and inference time across all six
-models.
+activity and body metrics, so the final comparison is a fair, apples-to-
+apples one. All train/test splitting uses scikit-learn's `train_test_split`
+(stratified).
+
+Before the six-model comparison, a short section introduces automated
+hyperparameter search — **GridSearchCV**, **RandomizedSearchCV**, and
+**HalvingRandomSearchCV** (with each one's own key parameters and defaults)
+— and the six-model showdown uses each model's *tuned* version
+(via RandomizedSearchCV) rather than hand-picked hyperparameters. Right
+before the capstone, a summary table + chart compares accuracy, training
+time, and inference time across all six tuned models.
 
 ## Open in Colab
 
