@@ -31,6 +31,8 @@ unit of X, the prediction changes by *this much*."
 
 ## Try it yourself
 
-Classify a new flower by hand, compare k-NN against a "dumb" majority-class
-baseline on Breast Cancer, add a second feature to the linear regression, and
-compare it against a "predict the average" baseline.
+Compare k-NN against a "dumb" majority-class baseline on Breast Cancer,
+compare linear regression against a "predict the average" baseline, and add
+a second feature (`s5`) to the regression — starter code for combining the
+two features and splitting the data is included, so the exercise is just
+fitting and comparing the R².
