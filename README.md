@@ -21,7 +21,7 @@ No local installation is required. If a student prefers to run notebooks locally
 | Week | Lecture theme | Project | Key libraries |
 |---|---|---|---|
 | 1 | Course intro & major Python AI libraries | [Student Exam Score Explorer](week01-python-ai-libraries/) — NumPy/pandas/matplotlib data analysis | numpy, pandas, matplotlib |
-| 2 | Supervised learning I (k-NN, linear regression) | [Flower Classifier & House Price Predictor](week02-supervised-learning-1/) | scikit-learn |
+| 2 | Supervised learning I (k-NN, linear regression) | [Flower/Tumor Classifier, House Price Predictor & k-NN Regression](week02-supervised-learning-1/): k-NN on Iris, Breast Cancer & California Housing, then linear regression | scikit-learn |
 | 3 | Supervised learning II (decision tree, ensembles, boosting) | [Tree Ensembles & Boosting Showdown](week03-supervised-learning-2/): decision tree → random forest → AdaBoost → GBM → XGBoost → LightGBM | scikit-learn, xgboost, lightgbm |
 | 4 | Unsupervised learning I (dimensionality reduction, PCA) | [Visualizing Handwritten Digits with PCA](week04-unsupervised-learning-1-pca/) | scikit-learn, matplotlib |
 | 5 | Unsupervised learning II (clustering, k-means) | [Customer Segmentation with K-Means](week05-unsupervised-learning-2-kmeans/) | scikit-learn |

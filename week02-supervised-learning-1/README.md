@@ -2,18 +2,28 @@
 
 **Lecture theme:** Supervised learning fundamentals — k-nearest neighbors, linear regression, and other basic supervised algorithms.
 
-## Project: Flower Classifier & House Price Predictor
+## Project: Flower/Tumor Classifier, House Price Predictor & k-NN Regression
 
-Two short, classic projects in one notebook — the two flavors of supervised
-learning:
+**Part A — k-Nearest Neighbors**, on three datasets, all built into
+scikit-learn (nothing to download):
 
-- **Classification with k-NN** — classify iris flowers into 3 species from
-  4 measurements, and see how the choice of `k` changes the decision boundary.
-- **Regression with Linear Regression** — predict a numeric disease-progression
-  score from a single health measurement, and read the fitted line as "for every
-  +1 unit of X, the prediction changes by *this much*."
+- **Iris** (classification) — classify flowers into 3 species from 4
+  measurements
+- **Breast Cancer** (classification) — classify tumors as malignant/benign
+  from 30 measurements
+- **California Housing** (regression) — predict a district's median house
+  price from 8 features; k-NN regression averages the `k` nearest
+  neighbors' target values instead of voting
 
-Both use datasets built into scikit-learn, so nothing needs to be downloaded.
+For each dataset, a pair of blocks shows the basic k-NN workflow — split the
+data, create the model (`k=1`), fit, evaluate — so you see the exact same
+four-step pattern repeat across classification and regression. Then a
+hands-on exercise section asks you to sweep `k` from 1 to 20 yourself for
+each dataset and plot how accuracy (or RMSE, for housing) changes.
+
+**Part B — Linear Regression** — predict a numeric disease-progression score
+from a single health measurement, and read the fitted line as "for every +1
+unit of X, the prediction changes by *this much*."
 
 ## Open in Colab
 
@@ -21,5 +31,6 @@ Both use datasets built into scikit-learn, so nothing needs to be downloaded.
 
 ## Try it yourself
 
-Try different values of `k`, add a third feature to the regression, and predict
-a made-up flower's species by hand.
+Classify a new flower by hand, compare k-NN against a "dumb" majority-class
+baseline on Breast Cancer, add a second feature to the linear regression, and
+compare it against a "predict the average" baseline.
