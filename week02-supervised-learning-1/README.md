@@ -21,9 +21,19 @@ four-step pattern repeat across classification and regression. Then a
 hands-on exercise section asks you to sweep `k` from 1 to 20 yourself for
 each dataset and plot how accuracy (or RMSE, for housing) changes.
 
-**Part B — Linear Regression** — predict a numeric disease-progression score
-from a single health measurement, and read the fitted line as "for every +1
-unit of X, the prediction changes by *this much*."
+**Part B — Linear Regression & Regularization**:
+
+1. Plain `LinearRegression` on the **diabetes** dataset — predict a numeric
+   disease-progression score from a single health measurement (BMI), and
+   read the fitted line as "for every +1 unit of X, the prediction changes
+   by *this much*."
+2. `LinearRegression → Ridge → Lasso → RidgeCV → LassoCV`, in that order, on
+   Kaggle's **[Wine Quality](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009)**
+   dataset (11 physicochemical features predicting a quality score) — Ridge
+   and Lasso first with a hand-picked `alpha` (with a Korean explanation of
+   what `alpha` controls and typical candidate values for each), then
+   RidgeCV/LassoCV to show how cross-validation can search for the best
+   `alpha` automatically, closing with a 5-model comparison table + chart.
 
 ## Open in Colab
 
