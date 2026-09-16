@@ -28,12 +28,22 @@ each dataset and plot how accuracy (or RMSE, for housing) changes.
    read the fitted line as "for every +1 unit of X, the prediction changes
    by *this much*."
 2. `LinearRegression → Ridge → Lasso → RidgeCV → LassoCV`, in that order, on
-   Kaggle's **[Wine Quality](https://www.kaggle.com/datasets/uciml/red-wine-quality-cortez-et-al-2009)**
-   dataset (11 physicochemical features predicting a quality score) — Ridge
-   and Lasso first with a hand-picked `alpha` (with a Korean explanation of
-   what `alpha` controls and typical candidate values for each), then
-   RidgeCV/LassoCV to show how cross-validation can search for the best
-   `alpha` automatically, closing with a 5-model comparison table + chart.
+   Kaggle's **[Gisette](https://www.kaggle.com/datasets/fedesoriano/gisette-dataset-mnist-digits-4-and-9)**
+   dataset — separating handwritten digits **4 vs. 9** from 5,000 features,
+   about half of which are pure noise by design (a NIPS 2003 feature
+   selection benchmark). With features outnumbering training rows,
+   unregularized `LinearRegression` overfits badly (great training fit,
+   weak test accuracy), while `Ridge`/`Lasso` are introduced first with a
+   hand-picked `alpha` (with a Korean explanation of what `alpha` controls
+   and typical candidate values for each), then `RidgeCV`/`LassoCV` to show
+   how cross-validation searches for the best `alpha` automatically — Lasso
+   zeroes out hundreds of the noise features outright. Classification is
+   done by regressing on ±1 labels and thresholding on the sign of the
+   prediction (what `RidgeClassifier` does internally), closing with a
+   5-model test-accuracy comparison + chart. A couple of real 4/9 digit
+   images from scikit-learn's bundled `load_digits()` open the section for
+   intuition (Gisette's own 5,000 features aren't raw pixels, so they can't
+   be plotted directly).
 
 ## Open in Colab
 
