@@ -27,7 +27,15 @@ each dataset and plot how accuracy (or RMSE, for housing) changes.
    disease-progression score from a single health measurement (BMI), and
    read the fitted line as "for every +1 unit of X, the prediction changes
    by *this much*."
-2. `LinearRegression → Ridge → Lasso → RidgeCV → LassoCV`, in that order, on
+2. **Why scale before Ridge/Lasso?** Load diabetes again with `scaled=False`
+   to get its original, unstandardized 10 features (e.g. `age` in 19–79,
+   `s5` in 3.26–6.11) and fit `Ridge`/`Lasso` directly on them — the
+   unscaled Lasso's coefficients end up large for naturally small-range
+   features regardless of true importance. Apply `StandardScaler` and
+   refit with the same `alpha`: R² improves (Ridge 0.464→0.478, Lasso
+   0.430→0.458) and the zeroed-out coefficients make more sense, closing
+   with a before/after bar chart.
+3. `LinearRegression → Ridge → Lasso → RidgeCV → LassoCV`, in that order, on
    Kaggle's **[Gisette](https://www.kaggle.com/datasets/fedesoriano/gisette-dataset-mnist-digits-4-and-9)**
    dataset — separating handwritten digits **4 vs. 9** from 5,000 features,
    about half of which are pure noise by design (a NIPS 2003 feature
@@ -52,7 +60,11 @@ each dataset and plot how accuracy (or RMSE, for housing) changes.
 ## Try it yourself
 
 Compare k-NN against a "dumb" majority-class baseline on Breast Cancer,
-compare linear regression against a "predict the average" baseline, and add
-a second feature (`s5`) to the regression — starter code for combining the
-two features and splitting the data is included, so the exercise is just
-fitting and comparing the R².
+compare linear regression against a "predict the average" baseline, add a
+second feature (`s5`) to the regression (starter code for combining the two
+features and splitting the data is included, so the exercise is just
+fitting and comparing the R²), and apply `LogisticRegression` directly to
+Gisette — a real classifier this time, no `np.sign()` trick needed — with
+its representative constructor arguments (`C`, `l1_ratio`, `solver`,
+`max_iter`, `class_weight`) explained inline, including that `penalty` is
+deprecated as of scikit-learn 1.8+ in favor of `l1_ratio`/`C`.
