@@ -21,7 +21,7 @@ four-step pattern repeat across classification and regression. Then a
 hands-on exercise section asks you to sweep `k` from 1 to 20 yourself for
 each dataset and plot how accuracy (or RMSE, for housing) changes.
 
-**Part B — Linear Models: Regression & Regularization**:
+**Part B — Linear Regression & Regularization**:
 
 1. Plain `LinearRegression` on the **diabetes** dataset — predict a numeric
    disease-progression score from a single health measurement (BMI), and
@@ -35,27 +35,19 @@ each dataset and plot how accuracy (or RMSE, for housing) changes.
    refit with the same `alpha`: R² improves (Ridge 0.464→0.478, Lasso
    0.430→0.458) and the zeroed-out coefficients make more sense, closing
    with a before/after bar chart.
-3. `LogisticRegression → RidgeClassifier → LogisticRegression(L1) →
-   RidgeClassifierCV → LogisticRegressionCV`, in that order, on Kaggle's
-   **[Gisette](https://www.kaggle.com/datasets/fedesoriano/gisette-dataset-mnist-digits-4-and-9)**
-   dataset — separating handwritten digits **4 vs. 9** from 5,000 features,
-   about half of which are pure noise by design (a NIPS 2003 feature
-   selection benchmark). With features outnumbering training rows, an
-   unregularized `LogisticRegression` baseline overfits badly (great
-   training fit, weak test accuracy). This time real classifiers are used
-   throughout instead of regressing on encoded labels: `RidgeClassifier`
-   is Ridge's classification counterpart, and since there's no
-   "LassoClassifier," `LogisticRegression` with an L1 penalty
-   (`l1_ratio=1`, `solver='saga'`) plays that role — introduced first with
-   a hand-picked regularization strength (with a Korean explanation of
-   `alpha`/`C` and typical candidate values for each), then
-   `RidgeClassifierCV`/`LogisticRegressionCV` show how cross-validation
-   searches for the best value automatically — the L1 classifier zeroes
-   out hundreds of the noise features outright, closing with a 5-model
-   test-accuracy comparison + chart. A couple of real 4/9 digit images
-   from scikit-learn's bundled `load_digits()` open the section for
-   intuition (Gisette's own 5,000 features aren't raw pixels, so they
-   can't be plotted directly).
+3. `LinearRegression → Ridge → Lasso → RidgeCV → LassoCV`, in that order,
+   on **House Prices (Ames Housing)** — predicting `SalePrice` from ~35
+   numeric home features (living area, quality ratings, garage size, year
+   built, etc.), several of which are strongly correlated with each other
+   (e.g. `GarageCars`/`GarageArea`, `TotalBsmtSF`/`1stFlrSF`). Fetched via
+   scikit-learn's own `fetch_openml(name="house_prices")` — the same Ames
+   Housing data the Kaggle "House Prices" competition is built from, but
+   through OpenML's open mirror instead of Kaggle, so no account or
+   competition sign-up is needed. Ridge and Lasso are introduced first
+   with a hand-picked `alpha` (with a Korean explanation of what `alpha`
+   controls and typical candidate values for each), then `RidgeCV`/
+   `LassoCV` show how cross-validation searches for the best `alpha`
+   automatically, closing with a 5-model R² comparison + chart.
 
 ## Open in Colab
 
