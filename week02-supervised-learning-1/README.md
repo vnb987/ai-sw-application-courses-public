@@ -36,18 +36,18 @@ each dataset and plot how accuracy (or RMSE, for housing) changes.
    0.430→0.458) and the zeroed-out coefficients make more sense, closing
    with a before/after bar chart.
 3. `LinearRegression → Ridge → Lasso → RidgeCV → LassoCV`, in that order,
-   on **House Prices (Ames Housing)** — predicting `SalePrice` from ~35
-   numeric home features (living area, quality ratings, garage size, year
-   built, etc.), several of which are strongly correlated with each other
-   (e.g. `GarageCars`/`GarageArea`, `TotalBsmtSF`/`1stFlrSF`). Fetched via
-   scikit-learn's own `fetch_openml(name="house_prices")` — the same Ames
-   Housing data the Kaggle "House Prices" competition is built from, but
-   through OpenML's open mirror instead of Kaggle, so no account or
-   competition sign-up is needed. Ridge and Lasso are introduced first
-   with a hand-picked `alpha` (with a Korean explanation of what `alpha`
-   controls and typical candidate values for each), then `RidgeCV`/
-   `LassoCV` show how cross-validation searches for the best `alpha`
-   automatically, closing with a 5-model R² comparison + chart.
+   on **[Mercedes-Benz Greener Manufacturing](https://www.kaggle.com/datasets/yasserh/mercedesbenz-greener-manufacturing-dataset)**
+   — predicting `y` (seconds for a car to pass a testing bench) from ~320
+   anonymized binary (0/1) features, many of which are duplicates or
+   near-duplicates of each other. Downloaded via `kagglehub` — a
+   login-free re-upload of the original Kaggle competition data. Ridge and
+   Lasso are introduced first with a hand-picked `alpha` (with a Korean
+   explanation of what `alpha` controls and typical candidate values for
+   each), then `RidgeCV`/`LassoCV` show how cross-validation searches for
+   the best `alpha` automatically, closing with a 5-model R² comparison +
+   chart — with this many redundant binary features, Lasso's automatic
+   feature selection (zeroing out most of the duplicate columns) is the
+   clearest way to see regularization actually help.
 
 ## Open in Colab
 
