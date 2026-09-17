@@ -13,6 +13,12 @@ You'll:
 - Use the **elbow method** to pick a sensible number of clusters
 - Run K-Means and visualize the discovered segments and their centers
 - Interpret each segment in plain business language
+- See **why initial centroids matter**: a hand-picked *bad* starting point
+  (two of three centroids dropped inside the same dense group) is run
+  through Lloyd's algorithm step by step, plotting all 6 iterations, so you
+  watch one true group get wrongly split while two separate ones get merged
+  — then compare its inertia against scikit-learn's default
+  (`init='k-means++'`, `n_init=10`), which finds the correct grouping
 
 ## Open in Colab
 
