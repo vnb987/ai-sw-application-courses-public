@@ -17,8 +17,10 @@ You'll:
   (two of three centroids dropped inside the same dense group) is run
   through Lloyd's algorithm step by step, plotting all 6 iterations, so you
   watch one true group get wrongly split while two separate ones get merged
-  — then compare its inertia against scikit-learn's default
-  (`init='k-means++'`, `n_init=10`), which finds the correct grouping
+  — then a *good* starting point (one centroid per true group) is run
+  through the same 6 iterations side by side, converging correctly from the
+  first step, before comparing both runs' final inertia against
+  scikit-learn's default (`init='k-means++'`, `n_init=10`)
 
 ## Open in Colab
 
