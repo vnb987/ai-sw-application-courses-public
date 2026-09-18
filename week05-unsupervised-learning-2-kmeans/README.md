@@ -29,3 +29,25 @@ You'll:
 ## Try it yourself
 
 Try a "wrong" number of clusters and see clusters get awkwardly split or merged.
+
+## Capstone: Study Group Matcher
+
+150 students' "preferred start time / preferred group size / focus intensity"
+dummy data is provided. Run K-Means to split them into a few "study
+personality" groups, then enter your own preferences and find which group
+you'd match.
+
+## Extended Capstone (optional): Movie Taste Clustering & Recommendation
+
+A step up in scope: a small group-based recommender built on real
+[MovieLens](https://movielens.org/) rating data (`ml-latest-small`, ~600
+users, ~9,700 movies, ~100k ratings — downloadable with no account or
+login, unlike Kaggle). A genre-balanced set of ~20-30 well-known "reference
+movies" is chosen, each eligible user is represented as their rating vector
+over just those movies (missing entries filled with that user's own average
+rating), and K-Means groups users into taste clusters. For movies outside
+the reference set, each cluster's average rating (requiring a minimum
+number of ratings to trust) becomes the recommendation signal. You rate a
+handful of the reference movies yourself, get assigned to a cluster via
+`kmeans.predict()`, and pull that cluster's Top-5 highest-rated movies you
+haven't already seen.
