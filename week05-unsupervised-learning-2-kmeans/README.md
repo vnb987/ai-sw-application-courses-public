@@ -21,6 +21,16 @@ You'll:
   through the same 6 iterations side by side, converging correctly from the
   first step, before comparing both runs' final inertia against
   scikit-learn's default (`init='k-means++'`, `n_init=10`)
+- Meet **DBSCAN**, a density-based alternative to K-Means: on two
+  interleaving crescents (plus scattered noise points) that K-Means can't
+  separate correctly, a hand-implemented DBSCAN is run with instrumentation
+  that snapshots the label array after every point is processed, then 6
+  evenly-spaced snapshots are plotted to show clusters growing outward from
+  a seed point along the density-connected crescent shape, with leftover
+  points marked as noise. The hand-rolled version is checked against
+  `sklearn.cluster.DBSCAN` (100% label agreement), then a side-by-side plot
+  shows K-Means splitting the crescents with an arbitrary straight-ish
+  boundary versus DBSCAN correctly separating them and flagging the noise
 
 ## Open in Colab
 
