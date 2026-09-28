@@ -1,4 +1,4 @@
-# Week 13 — Recurrent Neural Networks (RNN)
+# Week 12 — Recurrent Neural Networks (RNN)
 
 **Lecture theme:** Modeling sequential data with RNNs.
 
@@ -18,7 +18,7 @@ You'll:
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week13-rnn-name-generator/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week12-rnn-name-generator/project.ipynb)
 
 ## Try it yourself
 

@@ -1,4 +1,4 @@
-# Week 14 — LLMs & Agentic AI
+# Week 13 — LLMs & Agentic AI
 
 **Lecture theme:** Solving problems with large language models and practicing agentic AI usage.
 
@@ -31,7 +31,7 @@ type → T4 GPU* before running the setup cell.
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week14-llm-agentic-ai/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week13-llm-agentic-ai/project.ipynb)
 
 ## Try it yourself
 

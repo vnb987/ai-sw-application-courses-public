@@ -1,4 +1,4 @@
-# Week 9 — PyTorch Basics
+# Week 8 — PyTorch Basics
 
 **Lecture theme:** Building and training a neural network from scratch with PyTorch.
 
@@ -18,7 +18,7 @@ You'll:
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week09-pytorch-intro/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week08-pytorch-intro/project.ipynb)
 
 ## Try it yourself
 

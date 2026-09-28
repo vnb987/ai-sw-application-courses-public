@@ -1,4 +1,4 @@
-# Week 10 — Convolutional Neural Networks (CNN)
+# Week 9 — Convolutional Neural Networks (CNN)
 
 **Lecture theme:** CNN theory and image classification practice.
 
@@ -18,7 +18,7 @@ You'll:
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week10-cnn-image-classification/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week09-cnn-image-classification/project.ipynb)
 
 ## Try it yourself
 

@@ -1,4 +1,4 @@
-# Week 12 — NLP Basics & Word Embeddings
+# Week 11 — NLP Basics & Word Embeddings
 
 **Lecture theme:** NLP fundamentals — representing words as vectors (word embeddings).
 
@@ -19,7 +19,7 @@ You'll:
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week12-nlp-word-embeddings/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week11-nlp-word-embeddings/project.ipynb)
 
 ## Try it yourself
 

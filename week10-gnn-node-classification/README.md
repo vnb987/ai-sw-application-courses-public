@@ -1,4 +1,4 @@
-# Week 11 — Graph Neural Networks (GNN)
+# Week 10 — Graph Neural Networks (GNN)
 
 **Lecture theme:** GNN theory and practice.
 
@@ -21,7 +21,7 @@ You'll:
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week11-gnn-node-classification/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week10-gnn-node-classification/project.ipynb)
 
 ## Try it yourself
 

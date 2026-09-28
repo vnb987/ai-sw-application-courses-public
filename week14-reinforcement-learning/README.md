@@ -1,4 +1,4 @@
-# Week 15 — Reinforcement Learning Basics
+# Week 14 — Reinforcement Learning Basics
 
 **Lecture theme:** Fundamentals of reinforcement learning and basic agent training.
 
@@ -19,7 +19,7 @@ You'll:
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week15-reinforcement-learning/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week14-reinforcement-learning/project.ipynb)
 
 ## Try it yourself
 
