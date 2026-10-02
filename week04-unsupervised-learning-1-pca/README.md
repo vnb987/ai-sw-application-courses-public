@@ -40,12 +40,15 @@ told what a "0" or a "7" looks like.
 
 **Part 3 — NMF (Non-negative Matrix Factorization):** another feature
 extraction method, but constrained to non-negative values — a natural fit
-for pixel brightness (which is never negative). Compares NMF's components
-side by side with PCA's on the same digit images: PCA's components are
-diffuse red/blue patterns with negative values, while NMF's look like
-recognizable digit strokes — at the cost of slightly higher reconstruction
-error, since PCA is the mathematically optimal linear reconstruction for a
-given number of components.
+for pixel brightness (which is never negative). The 8x8 digit images are a
+bit too small to make PCA vs. NMF's difference easy to see, so this part
+switches to scikit-learn's built-in **Olivetti faces** (400 64x64 face
+photos, 40 people) and compares components side by side: PCA's components
+("eigenfaces") are diffuse, ghostly red/blue patterns with negative
+values, while NMF's look like recognizable face *parts* — an eyebrow, a
+nose, shading around the eyes — at the cost of slightly higher
+reconstruction error, since PCA is the mathematically optimal linear
+reconstruction for a given number of components.
 
 ## Open in Colab
 
@@ -59,4 +62,4 @@ try reconstructing with just 1 PCA component, and confirm PC1/PC2 are
 uncorrelated by construction. Then modify the feature-selection dataset so
 a feature gets added early but becomes redundant once a better one is
 added later — does stepwise selection catch it and remove it? — and try
-more NMF components (16 or 32) to see if reconstructed digits get sharper.
+more NMF components (16 or 32) to see if reconstructed faces get sharper.
