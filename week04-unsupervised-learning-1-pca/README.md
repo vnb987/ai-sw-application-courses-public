@@ -75,3 +75,27 @@ uncorrelated by construction. Then modify the feature-selection dataset so
 a feature gets added early but becomes redundant once a better one is
 added later — does stepwise selection catch it and remove it? — and try
 more NMF components (16 or 32) to see if reconstructed faces get sharper.
+
+## Capstone: PBTI — a PCA-Based Type Indicator
+
+A much larger, MBTI-style capstone built entirely around this week's main
+topic. Instead of hand-picking 4 personality axes up front, it defines **64
+fine-grained personality traits**, writes **40 natural-language survey
+questions** (each weighted across 5-7 related traits), and lets **PCA
+itself discover** 4 interpretable axes (Social↔Independent,
+Logical↔Empathetic, Structured↔Flexible, Practical↔Imaginative) from
+10,000 simulated survey respondents — since real large-scale survey data
+isn't available, a generative model (latent personality → 64 traits →
+simulated Likert responses) stands in for it. Because PCA is unsupervised,
+its components don't automatically line up with the 4 intended axes, so
+each component is matched to its best-fitting axis by correlation
+(`scipy.optimize.linear_sum_assignment`) and sign-corrected — not a
+replacement for PCA, just how its output gets interpreted. The notebook
+then classifies the resulting score into one of 16 types (with a nickname,
+description, strengths and caution for each), visualizes explained
+variance, per-axis PCA loadings, and where you land among the 10,000
+virtual respondents, and finally lets you take the actual 40-question
+survey via `ipywidgets` — projecting your answers into the *already
+fitted* PCA space (never refitting PCA on a single response). An explicit
+disclaimer: this is an educational PCA simulation, not a validated
+psychological assessment.
