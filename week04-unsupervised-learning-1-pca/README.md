@@ -50,18 +50,6 @@ nose, shading around the eyes — at the cost of slightly higher
 reconstruction error, since PCA is the mathematically optimal linear
 reconstruction for a given number of components.
 
-Part 3 closes with a **recent trend**: autoencoders — a neural-network
-take on the same "compress, then reconstruct" idea, built here with
-scikit-learn's `MLPRegressor` (PyTorch isn't introduced until a later
-week) by training it to predict its own input back through a small
-bottleneck. A **linear** autoencoder (no activation function) lands on
-almost exactly PCA's reconstruction error, concretely demonstrating the
-textbook result that a linear autoencoder learns the same subspace as
-PCA. A **non-linear** (ReLU) autoencoder is also tried and — with only
-400 training photos — typically comes out *worse* than PCA/NMF, a
-realistic lesson that neural approaches need far more data (and, later,
-convolutional architectures) before their extra flexibility pays off.
-
 ## Open in Colab
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week04-unsupervised-learning-1-pca/project.ipynb)
