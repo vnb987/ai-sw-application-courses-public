@@ -76,26 +76,30 @@ a feature gets added early but becomes redundant once a better one is
 added later — does stepwise selection catch it and remove it? — and try
 more NMF components (16 or 32) to see if reconstructed faces get sharper.
 
-## Capstone: PBTI — a PCA-Based Type Indicator
+## Capstone: DEVTi — Discover Your Developer DNA with PCA
 
-A much larger, MBTI-style capstone built entirely around this week's main
-topic. Instead of hand-picking 4 personality axes up front, it defines **64
-fine-grained personality traits**, writes **40 natural-language survey
-questions** (each weighted across 5-7 related traits), and lets **PCA
-itself discover** 4 interpretable axes (Social↔Independent,
-Logical↔Empathetic, Structured↔Flexible, Practical↔Imaginative) from
-10,000 simulated survey respondents — since real large-scale survey data
-isn't available, a generative model (latent personality → 64 traits →
+A much larger capstone built entirely around this week's main topic,
+analyzing **developer and problem-solving style** instead of a generic
+MBTI-style personality test. Instead of hand-picking 4 style axes up
+front, it defines **64 fine-grained developer traits** (across
+communication, analysis, planning and building habits), writes **40
+natural-language survey questions** relatable to CS students of any
+experience level (each weighted across 5-7 related traits), and lets
+**PCA itself discover** 4 interpretable axes (Collaborative↔Solo,
+Analytical↔Intuitive, Planner↔Explorer, Builder↔Visionary) from 10,000
+simulated student respondents — since real large-scale survey data
+isn't available, a generative model (latent dev-style → 64 traits →
 simulated Likert responses) stands in for it. Because PCA is unsupervised,
 its components don't automatically line up with the 4 intended axes, so
 each component is matched to its best-fitting axis by correlation
 (`scipy.optimize.linear_sum_assignment`) and sign-corrected — not a
 replacement for PCA, just how its output gets interpreted. The notebook
-then classifies the resulting score into one of 16 types (with a nickname,
-description, strengths and caution for each), visualizes explained
-variance, per-axis PCA loadings, and where you land among the 10,000
-virtual respondents, and finally lets you take the actual 40-question
-survey via `ipywidgets` — projecting your answers into the *already
-fitted* PCA space (never refitting PCA on a single response). An explicit
+then classifies the resulting score into one of 16 developer characters
+(each with a nickname, emoji, description, strengths, cautions, a
+"synergy" teammate type, and playfully-framed recommended fields),
+visualizes explained variance and per-axis PCA loadings, and finally lets
+you take the actual 40-question survey via `ipywidgets` (with a live
+progress indicator) — projecting your answers into the *already fitted*
+PCA space (never refitting PCA on a single response). An explicit
 disclaimer: this is an educational PCA simulation, not a validated
-psychological assessment.
+assessment of real job aptitude or developer skill.
