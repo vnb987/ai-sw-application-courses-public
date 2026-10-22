@@ -80,9 +80,4 @@ tune Min Support / Confidence / Lift sliders, and get ranked recommendations
 —  derived only from the mined rules, matched by **antecedent-subset**
 (not exact-match), aggregated when multiple rules recommend the same
 artist, with a plain-language explanation and a clear "no matching rules"
-message rather than a fabricated recommendation when nothing applies. A
-later section re-runs Apriori itself at a few different `min_support`
-values so you can see how the number of frequent itemsets and rules
-changes, closing with discussion questions on confidence's popularity bias
-and Apriori's cold-start limitation. An instructor's note at the end covers
-expected runtime, key preprocessing knobs, and common errors.
+message rather than a fabricated recommendation when nothing applies.
