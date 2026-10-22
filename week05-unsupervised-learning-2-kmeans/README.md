@@ -86,17 +86,21 @@ Visualizations cover the most popular artists, the distribution of
 frequent-itemset sizes, and a support-vs-confidence scatter colored by
 lift. The centerpiece is an `ipywidgets` recommender: search and select
 your own favorite artists, tune Min Support / Confidence / Lift / Min
-Antecedent Length sliders, and get ranked recommendations — derived only
-from the mined rules, matched by **antecedent-subset** (not exact-match),
-aggregated when multiple rules recommend the same artist, with a
-plain-language explanation and a clear "no matching rules" message rather
-than a fabricated recommendation when nothing applies. The Min Antecedent
-Length slider is a direct, hands-on way to see how requiring *all* of
-your selected artists together (rather than any single one) sharpens
-recommendations: for `{Taylor Swift, Olivia Rodrigo}`, raising it from 1
-to 2 drops single-artist-triggered rules and keeps only ones genuinely
-requiring both — e.g. Sabrina Carpenter's confidence jumps from a
-single-artist rule to a much stronger 0.61 once both are required. On
+Antecedent Length (1-3) sliders, and get ranked recommendations — derived
+only from the mined rules, matched by **antecedent-subset** (not
+exact-match), aggregated when multiple rules recommend the same artist,
+with a plain-language explanation and a clear "no matching rules" message
+rather than a fabricated recommendation when nothing applies. Apriori is
+mined up to `max_len=4` (itemsets of up to 4 artists) specifically so a
+3-artist antecedent plus a 1-artist consequent both fit — confirmed to
+still run in ~10s with no added memory cost over the previous `max_len=3`.
+The Min Antecedent Length slider is a direct, hands-on way to see how
+requiring *all* of your selected artists together (rather than any
+single one) sharpens recommendations: for `{Taylor Swift, Olivia
+Rodrigo, Sabrina Carpenter}`, raising it to 3 drops every rule triggered
+by just one or two of them and keeps only ones genuinely requiring all
+three — e.g. Billie Eilish's confidence jumps to 0.75 once all three are
+required. On
 real data, `{Taylor Swift, Olivia Rodrigo}` surfaces Gracie Abrams/
 Chappell Roan/Sabrina Carpenter, and `{BTS, BLACKPINK}` surfaces TOMORROW
 X TOGETHER/Seventeen/ITZY — genuinely coherent, contemporary clusters.
