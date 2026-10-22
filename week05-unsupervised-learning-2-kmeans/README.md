@@ -65,19 +65,32 @@ haven't already seen.
 ## Extended Capstone 2 (optional): Music Recommendation with Apriori
 
 A different kind of unsupervised learning — **association rule mining**
-(a.k.a. market basket analysis) — applied to real
-[Last.fm listening data (HetRec 2011)](https://grouplens.org/datasets/hetrec-2011/)
-(~1,900 users, downloadable with no login). Each user's set of listened-to
-artists becomes a "transaction," `mlxtend`'s **Apriori** algorithm mines
-frequent artist combinations, and `association_rules` turns those into
-rules like `{Coldplay, Radiohead} → {Muse}`, scored by **support**,
-**confidence**, and **lift** (with an explanation of why lift corrects
-confidence's bias toward already-popular artists). Visualizations cover
-the most popular artists, the distribution of frequent-itemset sizes, and
-a support-vs-confidence scatter colored by lift. The centerpiece is an
-`ipywidgets` recommender: search and select your own favorite artists,
-tune Min Support / Confidence / Lift sliders, and get ranked recommendations
-—  derived only from the mined rules, matched by **antecedent-subset**
-(not exact-match), aggregated when multiple rules recommend the same
-artist, with a plain-language explanation and a clear "no matching rules"
-message rather than a fabricated recommendation when nothing applies.
+(a.k.a. market basket analysis) — applied to real listening data from
+[`Gabriel-Kahen/user_music_listening_dataset`](https://github.com/Gabriel-Kahen/user_music_listening_dataset)
+(a GitHub mirror of the Kaggle dataset `gabrielkahen/music-listening-data-500k-users`):
+~476,000 Last.fm users' personal top-50 artist lists, ~531,000 unique
+artists, downloadable with no login. Unlike the older HetRec 2011 dataset
+this replaced, it's confirmed (in-notebook, not assumed) to actually
+contain contemporary artists — Taylor Swift, Olivia Rodrigo, Chappell
+Roan, BTS, BLACKPINK, NewJeans and more are all present, each reported
+with its real popularity rank among ~531K artists. Each user's top-50 set
+becomes a "transaction," `mlxtend`'s **Apriori** algorithm mines frequent
+artist combinations (`low_memory=True`, needed for this much larger
+item/user space), and `association_rules` turns those into rules scored
+by **support**, **confidence**, and **lift** (with an explanation of why
+lift corrects confidence's bias toward already-popular artists).
+Preprocessing samples 50,000 users and keeps the top 500 most-listened
+artists — chosen specifically to keep all of the example contemporary
+artists above instead of just collapsing to decade-old classics.
+Visualizations cover the most popular artists, the distribution of
+frequent-itemset sizes, and a support-vs-confidence scatter colored by
+lift. The centerpiece is an `ipywidgets` recommender: search and select
+your own favorite artists, tune Min Support / Confidence / Lift sliders,
+and get ranked recommendations — derived only from the mined rules,
+matched by **antecedent-subset** (not exact-match), aggregated when
+multiple rules recommend the same artist, with a plain-language
+explanation and a clear "no matching rules" message rather than a
+fabricated recommendation when nothing applies. On real data, `{Taylor
+Swift, Olivia Rodrigo}` surfaces Gracie Abrams/Chappell Roan/Sabrina
+Carpenter, and `{BTS, BLACKPINK}` surfaces TOMORROW X TOGETHER/Seventeen/
+ITZY — genuinely coherent, contemporary clusters.
