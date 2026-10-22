@@ -61,3 +61,28 @@ number of ratings to trust) becomes the recommendation signal. You rate a
 handful of the reference movies yourself, get assigned to a cluster via
 `kmeans.predict()`, and pull that cluster's Top-5 highest-rated movies you
 haven't already seen.
+
+## Extended Capstone 2 (optional): Music Recommendation with Apriori
+
+A different kind of unsupervised learning — **association rule mining**
+(a.k.a. market basket analysis) — applied to real
+[Last.fm listening data (HetRec 2011)](https://grouplens.org/datasets/hetrec-2011/)
+(~1,900 users, downloadable with no login). Each user's set of listened-to
+artists becomes a "transaction," `mlxtend`'s **Apriori** algorithm mines
+frequent artist combinations, and `association_rules` turns those into
+rules like `{Coldplay, Radiohead} → {Muse}`, scored by **support**,
+**confidence**, and **lift** (with an explanation of why lift corrects
+confidence's bias toward already-popular artists). Visualizations cover
+the most popular artists, the distribution of frequent-itemset sizes, and
+a support-vs-confidence scatter colored by lift. The centerpiece is an
+`ipywidgets` recommender: search and select your own favorite artists,
+tune Min Support / Confidence / Lift sliders, and get ranked recommendations
+—  derived only from the mined rules, matched by **antecedent-subset**
+(not exact-match), aggregated when multiple rules recommend the same
+artist, with a plain-language explanation and a clear "no matching rules"
+message rather than a fabricated recommendation when nothing applies. A
+later section re-runs Apriori itself at a few different `min_support`
+values so you can see how the number of frequent itemsets and rules
+changes, closing with discussion questions on confidence's popularity bias
+and Apriori's cold-start limitation. An instructor's note at the end covers
+expected runtime, key preprocessing knobs, and common errors.
