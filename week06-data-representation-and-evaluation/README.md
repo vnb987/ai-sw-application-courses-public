@@ -26,12 +26,31 @@ of this part's preprocessing topics:
    (>70% missing), fill `Embarked` with the mode (only 2 missing), and fill
    `Age` with its `(Pclass, Sex)` group median (~20% missing — too much to
    drop, too group-dependent for a single global mean)
-6. **Outliers** — flag high-`Fare` passengers with the IQR method, then
+6. **Does the imputation method actually matter?** Titanic's `Age` isn't a
+   great dataset to showcase the fancier methods from lecture (mean,
+   median, mode, regression, multiple imputation/MICE), since it barely
+   correlates with anything beyond `Pclass`/`Sex`. Instead, this reuses the
+   **user x movie rating matrix** from Week 5's clustering capstone (real
+   [MovieLens](https://movielens.org/) data) — a dataset with genuinely
+   correlated columns, like the lecture's own missing-value slide. All
+   five methods are implemented and put through a fair, held-out test:
+   hide 20% of known ratings, fill them back in with each method, and
+   measure the error against the real value (RMSE). Mode comes out
+   clearly worst, regression tends to win, and MICE lands roughly where
+   mean/median do on this particular matrix — a concrete lesson that a
+   fancier-sounding method isn't automatically better. Then the real (not
+   held-out) matrix is filled by each method and re-clustered with Week
+   5's exact K-Means step: the resulting clusters disagree substantially
+   between methods (Adjusted Rand Index well below 1.0), and one example
+   user is shown landing in a different taste cluster — and getting a
+   completely different Top-5 movie recommendation — purely depending on
+   which imputation method filled in their blanks.
+7. **Outliers** — flag high-`Fare` passengers with the IQR method, then
    reason about whether to keep them (they're real 1st-class fares, not
    errors) or cap them
-7. **Ordinal vs. nominal encoding** — `Pclass` (ordinal, already numeric)
+8. **Ordinal vs. nominal encoding** — `Pclass` (ordinal, already numeric)
    used as-is vs. `Sex`/`Embarked` (nominal) one-hot encoded
-8. **Leakage-safe scaling** — a 3-way train/validation/test split, then a
+9. **Leakage-safe scaling** — a 3-way train/validation/test split, then a
    side-by-side comparison of a `StandardScaler` fit on the full dataset
    (leaky) vs. fit on the training set only (correct), making the
    difference in the learned mean/std concrete
@@ -54,29 +73,3 @@ Part 1:
 ## Open in Colab
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week06-data-representation-and-evaluation/project.ipynb)
-
-## Try it yourself
-
-**Part 1:** Try label encoding instead of one-hot encoding for the brand
-column and see why it can silently confuse a linear model. Then try
-Z-score-based outlier detection on `Fare` instead of IQR, and look again at
-the used-car example's own scaling step to spot (and explain) its own
-leakage-safety issue.
-
-**Part 2:** Adjust the classification threshold and watch precision and
-recall trade off against each other.
-
-## Capstones
-
-This week has **two** capstones, one per part — do them in order.
-
-**Part 1 — Used Textbook Price Estimator:** 200 dummy campus marketplace
-listings (category, condition, age, original price → sold price). Apply
-one-hot encoding + feature engineering + linear regression to estimate a
-fair price for something you want to sell.
-
-**Part 2 — Late-Submission Risk Predictor:** 250 dummy assignment records
-(days before started / estimated hours / other deadlines that week /
-difficulty → submitted late or not). Apply logistic regression + cross-
-validation + confusion matrix/precision/recall to predict how risky your
-next assignment is.
