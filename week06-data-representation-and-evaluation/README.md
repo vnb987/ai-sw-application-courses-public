@@ -39,12 +39,14 @@ of this part's preprocessing topics:
    dataset (1,599 wines, 11 physicochemical measurements → quality score)
    and a `RandomForestRegressor`, this runs the actual experiment: train on
    the complete data for a baseline RMSE, then randomly knock out 5%, 10%,
-   20%, and 30% of the *test* set's input features, fill them back in with
-   each method (fit only on the clean training data), and feed every
-   version through the **same already-trained model**. Mode is
-   consistently worst, mean/median degrade steadily, and regression/MICE
-   hold up best as missingness grows — a concrete, ground-truth-backed
-   answer to "does the imputation method actually matter?"
+   20%, and 30% of the **training** set's input features, fill them back
+   in with each method, and train a **new** model on each imputed version
+   — evaluating all of them on the same untouched test set. At low
+   missingness all five methods perform similarly, but mode becomes the
+   clear loser once missingness reaches 20-30%, while regression and MICE
+   separate from the pack and end up closest to the clean baseline — a
+   concrete, ground-truth-backed answer to "does the imputation method
+   actually matter?"
 8. **Outliers** — flag high-`Fare` passengers with the IQR method, then
    reason about whether to keep them (they're real 1st-class fares, not
    errors) or cap them
