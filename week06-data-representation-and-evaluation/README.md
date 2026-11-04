@@ -48,9 +48,21 @@ of this part's preprocessing topics:
 8. **Outliers** — flag high-`Fare` passengers with the IQR method, then
    reason about whether to keep them (they're real 1st-class fares, not
    errors) or cap them
-9. **Ordinal vs. nominal encoding** — `Pclass` (ordinal, already numeric)
+9. **Does the outlier-removal method matter? (Wine Quality)** — ~5% of the
+   Wine Quality training rows are contaminated with synthetic outliers
+   (each one mixes real measurements from several different wines, so no
+   single column looks unusual on its own, only the combination). A
+   `RandomForestRegressor` is then compared with no removal against
+   removing them via **IQR**, **LOF**, and **PCA reconstruction error**.
+   IQR ends up flagging far more rows than it actually catches of the true
+   outliers (it only ever looks at one column at a time) and removing them
+   makes the model *worse* than doing nothing; LOF and PCA reconstruction
+   error — which judge a row by its whole combination of features — flag a
+   tighter, more accurate set and genuinely bring performance back toward
+   the uncontaminated baseline.
+10. **Ordinal vs. nominal encoding** — `Pclass` (ordinal, already numeric)
    used as-is vs. `Sex`/`Embarked` (nominal) one-hot encoded
-10. **Leakage-safe scaling** — a 3-way train/validation/test split, then a
+11. **Leakage-safe scaling** — a 3-way train/validation/test split, then a
    side-by-side comparison of a `StandardScaler` fit on the full dataset
    (leaky) vs. fit on the training set only (correct), making the
    difference in the learned mean/std concrete
