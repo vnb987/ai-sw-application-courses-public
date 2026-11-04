@@ -26,31 +26,31 @@ of this part's preprocessing topics:
    (>70% missing), fill `Embarked` with the mode (only 2 missing), and fill
    `Age` with its `(Pclass, Sex)` group median (~20% missing — too much to
    drop, too group-dependent for a single global mean)
-6. **Does the imputation method actually matter?** Titanic's `Age` isn't a
-   great dataset to showcase the fancier methods from lecture (mean,
-   median, mode, regression, multiple imputation/MICE), since it barely
-   correlates with anything beyond `Pclass`/`Sex`. Instead, this reuses the
+6. **A quick multiple-imputation (MICE) example** — Titanic's `Age` isn't a
+   great dataset to showcase it, since it barely correlates with anything
+   beyond `Pclass`/`Sex`. Instead, `IterativeImputer` is applied to the
    **user x movie rating matrix** from Week 5's clustering capstone (real
-   [MovieLens](https://movielens.org/) data) — a dataset with genuinely
-   correlated columns, like the lecture's own missing-value slide. All
-   five methods are implemented and put through a fair, held-out test:
-   hide 20% of known ratings, fill them back in with each method, and
-   measure the error against the real value (RMSE). Mode comes out
-   clearly worst, regression tends to win, and MICE lands roughly where
-   mean/median do on this particular matrix — a concrete lesson that a
-   fancier-sounding method isn't automatically better. Then the real (not
-   held-out) matrix is filled by each method and re-clustered with Week
-   5's exact K-Means step: the resulting clusters disagree substantially
-   between methods (Adjusted Rand Index well below 1.0), and one example
-   user is shown landing in a different taste cluster — and getting a
-   completely different Top-5 movie recommendation — purely depending on
-   which imputation method filled in their blanks.
-7. **Outliers** — flag high-`Fare` passengers with the IQR method, then
+   [MovieLens](https://movielens.org/) data), just to show it fills every
+   blank with a *different*, correlation-aware value instead of one flat
+   number — there's no ground truth here to score it against, so this is a
+   demonstration, not a comparison.
+7. **A rigorous comparison: mean vs. median vs. mode vs. regression vs.
+   MICE** — using the [UCI Wine Quality](https://archive.ics.uci.edu/dataset/186/wine+quality)
+   dataset (1,599 wines, 11 physicochemical measurements → quality score)
+   and a `RandomForestRegressor`, this runs the actual experiment: train on
+   the complete data for a baseline RMSE, then randomly knock out 5%, 10%,
+   20%, and 30% of the *test* set's input features, fill them back in with
+   each method (fit only on the clean training data), and feed every
+   version through the **same already-trained model**. Mode is
+   consistently worst, mean/median degrade steadily, and regression/MICE
+   hold up best as missingness grows — a concrete, ground-truth-backed
+   answer to "does the imputation method actually matter?"
+8. **Outliers** — flag high-`Fare` passengers with the IQR method, then
    reason about whether to keep them (they're real 1st-class fares, not
    errors) or cap them
-8. **Ordinal vs. nominal encoding** — `Pclass` (ordinal, already numeric)
+9. **Ordinal vs. nominal encoding** — `Pclass` (ordinal, already numeric)
    used as-is vs. `Sex`/`Embarked` (nominal) one-hot encoded
-9. **Leakage-safe scaling** — a 3-way train/validation/test split, then a
+10. **Leakage-safe scaling** — a 3-way train/validation/test split, then a
    side-by-side comparison of a `StandardScaler` fit on the full dataset
    (leaky) vs. fit on the training set only (correct), making the
    difference in the learned mean/std concrete
