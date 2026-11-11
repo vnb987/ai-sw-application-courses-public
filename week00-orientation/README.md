@@ -14,11 +14,10 @@ you immediately try each idea in code instead of only hearing about it.
 - **Weeks 1–6:** classical machine learning with scikit-learn — k-NN, linear
   regression & regularization, tree ensembles & boosting, PCA, k-means &
   DBSCAN, and how to represent data and evaluate a model properly.
-- **Week 7:** midterm exam (covers weeks 1–6).
-- **Weeks 8–14:** deep learning and beyond, in PyTorch — neural networks
-  from scratch, CNNs, GNNs, NLP & word embeddings, RNNs, LLMs & agentic AI,
-  and reinforcement learning.
-- **Week 15:** final exam (covers weeks 8–14).
+- **Weeks 7–14:** deep learning and beyond, in PyTorch — tensors & autograd,
+  multi-layer perceptrons, CNNs, GNNs, NLP & word embeddings, RNNs, LLMs &
+  agentic AI, and reinforcement learning.
+- **Week 15:** final exam (covers weeks 7–14).
 
 Each week's folder (`weekNN-topic/`) contains:
 
