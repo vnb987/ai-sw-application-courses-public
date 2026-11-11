@@ -1,4 +1,4 @@
-# Week 8 — PyTorch Basics
+# Week 8 — Multi-Layer Perceptron (MLP)
 
 **Lecture theme:** Building and training a neural network from scratch with PyTorch.
 

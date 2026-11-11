@@ -28,7 +28,7 @@ No local installation is required. If a student prefers to run notebooks locally
 | 5 | Unsupervised learning II (clustering, k-means) | [Customer Segmentation with K-Means](week05-unsupervised-learning-2-kmeans/) | scikit-learn |
 | 6 | Data representation & model evaluation (encoding, feature engineering, cross-validation, metrics) | [Used Car Price Predictor & Breast Cancer Diagnosis Evaluator](week06-data-representation-and-evaluation/): Part 1 — encoding & feature engineering, then missing values/outliers/leakage-safe scaling on real Titanic data; Part 2 — CV, confusion matrix, ROC/AUC | pandas, scikit-learn |
 | 7 | **Midterm exam** (covers weeks 1–6) | [Optional self-check review](week07-midterm-exam/) | — |
-| 8 | PyTorch basics | [Handwritten Digit Classifier with PyTorch](week08-pytorch-intro/): first neural net trained from scratch | torch, torchvision |
+| 8 | Multi-Layer Perceptron (MLP) | [Handwritten Digit Classifier with PyTorch](week08-pytorch-intro/): first neural net trained from scratch | torch, torchvision |
 | 9 | Convolutional neural networks (CNN) | [Fashion Image Classifier with a CNN](week09-cnn-image-classification/) | torch, torchvision |
 | 10 | Graph neural networks (GNN) | [Community Detection with a GNN](week10-gnn-node-classification/): GCN on Zachary's Karate Club | torch, networkx |
 | 11 | NLP basics & word embeddings | [Word Embeddings & Semantic Similarity](week11-nlp-word-embeddings/) | gensim, scikit-learn |
