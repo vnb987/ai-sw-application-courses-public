@@ -37,6 +37,13 @@ No local installation is required. If a student prefers to run notebooks locally
 | 14 | Reinforcement learning basics | [Teaching an Agent to Escape a Frozen Lake](week14-reinforcement-learning/): tabular Q-learning | gymnasium |
 | 15 | **Final exam** (covers weeks 8–14) | [Exam info](week15-final-exam/) | — |
 
+## Other tools
+
+- [**Grade Hash Lookup**](grade-hash-lookup/): a small standalone notebook
+  (not tied to any specific week) that turns a student's name + ID into a
+  deterministic hash, so grades can be posted as "hash — score" instead of
+  "name — score" without casually exposing everyone's scores to everyone.
+
 ## Notes for instructors
 
 - Every non-exam notebook builds a small, complete, runnable project rather than isolated code snippets — the goal is an "aha, I can actually build this" moment each week, not library-reference coverage.

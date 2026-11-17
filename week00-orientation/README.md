@@ -17,7 +17,7 @@ you immediately try each idea in code instead of only hearing about it.
 - **Weeks 7–14:** deep learning and beyond, in PyTorch — tensors & autograd,
   multi-layer perceptrons, CNNs, GNNs, NLP & word embeddings, RNNs, LLMs &
   agentic AI, and reinforcement learning.
-- **Week 15:** final exam (covers weeks 7–14).
+- **Week 15:** final exam (covers weeks 8–14; weeks 1–7 are assumed background).
 
 Each week's folder (`weekNN-topic/`) contains:
 
