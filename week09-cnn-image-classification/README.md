@@ -18,8 +18,10 @@ are":
    layer) against **Fine-tuning** (also unfreeze the last conv block, with a
    smaller learning rate).
 3. **Object Detection** — use a pretrained **YOLO11n** to find *and locate*
-   multiple objects in images and video, and see how confidence threshold
-   and NMS (IoU threshold) change the results.
+   multiple objects in images, see how confidence threshold and NMS (IoU
+   threshold) change the results, then finish with a live demo: take a
+   photo with your own webcam (right in the browser) and watch YOLO detect
+   objects in it.
 
 Each part only needs the shared setup in Part 0, so you can run Parts 1, 2,
 and 3 in any order.
