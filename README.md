@@ -28,8 +28,8 @@ No local installation is required. If a student prefers to run notebooks locally
 | 5 | Unsupervised learning II (clustering, k-means) | [Customer Segmentation with K-Means](week05-unsupervised-learning-2-kmeans/) | scikit-learn |
 | 6 | Data representation & model evaluation (encoding, feature engineering, cross-validation, metrics) | [Used Car Price Predictor & Breast Cancer Diagnosis Evaluator](week06-data-representation-and-evaluation/): Part 1 — encoding & feature engineering, then rigorous missing-value/outlier-handling method comparisons on real Wine Quality & MovieLens data; Part 2 — XGBoost with train/validation/test, CV-based hyperparameter tuning, confusion matrix, ROC/AUC | pandas, scikit-learn, xgboost |
 | 7 | PyTorch basics (tensors, autograd) | [Tensors & Autograd](week07-pytorch-basics/): fit a line with nothing but autograd, by hand | torch |
-| 8 | Multi-Layer Perceptron (MLP) | [Handwritten Digit Classifier with PyTorch](week08-pytorch-intro/): first neural net trained from scratch | torch, torchvision |
-| 9 | Convolutional neural networks (CNN) | [Fashion Image Classifier with a CNN](week09-cnn-image-classification/) | torch, torchvision |
+| 8 | Multi-Layer Perceptron (MLP) | [Seoul Bike Sharing Demand Prediction, then MNIST Classification](week08-pytorch-intro/): first neural net trained from scratch, comparing hidden-layer width & depth | torch, torchvision |
+| 9 | Convolutional neural networks (CNN) | [CNN Hands-On Lab](week09-cnn-image-classification/): pretrained ResNet18 image classification → transfer learning (feature extraction vs. fine-tuning) on Oxford-IIIT Pet → object detection with YOLO | torch, torchvision, ultralytics |
 | 10 | Graph neural networks (GNN) | [Community Detection with a GNN](week10-gnn-node-classification/): GCN on Zachary's Karate Club | torch, networkx |
 | 11 | NLP basics & word embeddings | [Word Embeddings & Semantic Similarity](week11-nlp-word-embeddings/) | gensim, scikit-learn |
 | 12 | Recurrent neural networks (RNN) | [Name Generator with a Character-Level LSTM](week12-rnn-name-generator/) | torch |
