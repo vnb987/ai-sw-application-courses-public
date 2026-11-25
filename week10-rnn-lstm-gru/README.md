@@ -42,8 +42,10 @@ downloading the COCO caption images in Part 1.
 
 ## Open in Kaggle (if Colab GPUs are unavailable)
 
-[![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/vnb987/ai-sw-application-courses/blob/main/week10-rnn-lstm-gru/project.ipynb)
+[![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/vnb987/ai-sw-application-courses-public/blob/main/week10-rnn-lstm-gru/project.ipynb)
 
 Kaggle Notebooks give a free GPU (with a weekly quota) and are a good
 fallback when Colab won't assign one. After it opens, turn on a GPU under
-**Settings > Accelerator** before running.
+**Settings > Accelerator** before running. (This button points at the
+public mirror of this repo, since Kaggle's importer can't reach a
+private one — the content is identical.)
