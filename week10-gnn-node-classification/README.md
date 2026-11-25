@@ -21,7 +21,8 @@ real sequence-generation work:
    spectrogram, which a Griffin-Lim vocoder turns into audio you can play
    right in the notebook.
 3. **Translation** — a **GRU Encoder-Decoder with attention**, trained from
-   scratch (English→Korean, on a filtered subset of the OPUS-100 dataset),
+   scratch (English→Korean, on a filtered subset of real human-translated
+   sentence pairs from the Tatoeba Project),
    translates a sentence you type, and the result is compared side by side
    with a real call to **Google Translate**. The gap between the two is
    itself the lesson: a small model trained briefly in class vs. a
