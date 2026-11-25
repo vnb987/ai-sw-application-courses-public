@@ -33,9 +33,17 @@ in any order.
 
 ## Open in Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week10-gnn-node-classification/project.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vnb987/ai-sw-application-courses/blob/main/week10-rnn-lstm-gru/project.ipynb)
 
 A GPU runtime (`Runtime > Change runtime type`) is recommended — Part 1 and
 Part 3 train a model from scratch inside the notebook. The full notebook
 takes roughly 15–20 minutes end-to-end on a Colab GPU, most of it spent
 downloading the COCO caption images in Part 1.
+
+## Open in Kaggle (if Colab GPUs are unavailable)
+
+[![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/vnb987/ai-sw-application-courses/blob/main/week10-rnn-lstm-gru/project.ipynb)
+
+Kaggle Notebooks give a free GPU (with a weekly quota) and are a good
+fallback when Colab won't assign one. After it opens, turn on a GPU under
+**Settings > Accelerator** before running.
