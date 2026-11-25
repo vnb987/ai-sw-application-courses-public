@@ -30,7 +30,7 @@ No local installation is required. If a student prefers to run notebooks locally
 | 7 | PyTorch basics (tensors, autograd) | [Tensors & Autograd](week07-pytorch-basics/): fit a line with nothing but autograd, by hand | torch |
 | 8 | Multi-Layer Perceptron (MLP) | [Seoul Bike Sharing Demand Prediction, then MNIST Classification](week08-pytorch-intro/): first neural net trained from scratch, comparing hidden-layer width & depth | torch, torchvision |
 | 9 | Convolutional neural networks (CNN) | [CNN Hands-On Lab](week09-cnn-image-classification/): pretrained ResNet18 image classification → transfer learning (feature extraction vs. fine-tuning) on Oxford-IIIT Pet → object detection with YOLO | torch, torchvision, ultralytics |
-| 10 | Graph neural networks (GNN) | [Community Detection with a GNN](week10-gnn-node-classification/): GCN on Zachary's Karate Club | torch, networkx |
+| 10 | RNN, LSTM, GRU | [Image Captioning, Text-to-Speech & Translation](week10-gnn-node-classification/): CNN+LSTM image captioning, pretrained Tacotron2 TTS, GRU seq2seq+attention translation vs. Google Translate | torch, torchaudio, datasets, deep-translator |
 | 11 | NLP basics & word embeddings | [Word Embeddings & Semantic Similarity](week11-nlp-word-embeddings/) | gensim, scikit-learn |
 | 12 | Recurrent neural networks (RNN) | [Name Generator with a Character-Level LSTM](week12-rnn-name-generator/) | torch |
 | 13 | LLMs & agentic AI | [Build a Local LLM Chatbot & Tool-Using Agent](week13-llm-agentic-ai/) | transformers |

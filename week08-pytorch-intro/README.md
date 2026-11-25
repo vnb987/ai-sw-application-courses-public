@@ -5,7 +5,7 @@
 ## Project: Seoul Bike Sharing Demand Prediction, then MNIST Classification
 
 This week you build a feedforward network **from scratch in PyTorch** — the
-library you'll use for the rest of the course (CNNs, GNNs, RNNs, all sit on
+library you'll use for the rest of the course (CNNs, RNNs, LSTMs, all sit on
 top of this). The main project is a **regression** problem on real tabular
 data: predicting hourly bike-rental demand in Seoul from weather and time
 features (hour, temperature, humidity, wind speed, visibility, dew point,

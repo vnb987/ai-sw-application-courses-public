@@ -15,7 +15,7 @@ you immediately try each idea in code instead of only hearing about it.
   regression & regularization, tree ensembles & boosting, PCA, k-means &
   DBSCAN, and how to represent data and evaluate a model properly.
 - **Weeks 7–14:** deep learning and beyond, in PyTorch — tensors & autograd,
-  multi-layer perceptrons, CNNs, GNNs, NLP & word embeddings, RNNs, LLMs &
+  multi-layer perceptrons, CNNs, RNNs/LSTM/GRU, NLP & word embeddings, LLMs &
   agentic AI, and reinforcement learning.
 - **Week 15:** final exam (covers weeks 8–14; weeks 1–7 are assumed background).
 
