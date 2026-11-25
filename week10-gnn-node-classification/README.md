@@ -13,8 +13,9 @@ real sequence-generation work:
    photo into a feature vector, and an **LSTM decoder you train from
    scratch** (on a subset of real COCO captions, downloaded directly from
    the official COCO dataset) generates a caption for it one word at a
-   time. Comes with a default image (`zidane.jpg`, the same one from
-   Week 9) and an optional Colab-upload cell for your own photo.
+   time (with a diagram of the CNN-encoder → LSTM-decoder architecture).
+   Comes with a default image (`zidane.jpg`, the same one from Week 9) and
+   an optional Colab-upload cell for your own photo.
 2. **Text-to-Speech (TTS)** — a pretrained **Tacotron2** model (its decoder
    is itself LSTM-based) turns a typed English sentence into a mel
    spectrogram, which a Griffin-Lim vocoder turns into audio you can play
